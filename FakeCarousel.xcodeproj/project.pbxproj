@@ -14,6 +14,12 @@
 		77C03A7E199FB8E800C43909 /* FakeCarouselTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03A7D199FB8E800C43909 /* FakeCarouselTests.swift */; };
 		77C03A88199FBA5C00C43909 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03A87199FBA5C00C43909 /* IntroViewController.swift */; };
 		77C03A8A19A0214F00C43909 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03A8919A0214F00C43909 /* SignInViewController.swift */; };
+		77C03A8C19A0436100C43909 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03A8B19A0436100C43909 /* WelcomeViewController.swift */; };
+		77C03A8E19A0592E00C43909 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03A8D19A0592E00C43909 /* FeedViewController.swift */; };
+		77C03A9019A05B4100C43909 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03A8F19A05B4100C43909 /* ConversationsViewController.swift */; };
+		77C03A9219A05D5100C43909 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03A9119A05D5100C43909 /* SettingsViewController.swift */; };
+		77C03A9419A067C300C43909 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03A9319A067C300C43909 /* SignUpViewController.swift */; };
+		77C03A9619A0767200C43909 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C03A9519A0767200C43909 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +44,12 @@
 		77C03A7D199FB8E800C43909 /* FakeCarouselTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeCarouselTests.swift; sourceTree = "<group>"; };
 		77C03A87199FBA5C00C43909 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		77C03A8919A0214F00C43909 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		77C03A8B19A0436100C43909 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		77C03A8D19A0592E00C43909 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		77C03A8F19A05B4100C43909 /* ConversationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		77C03A9119A05D5100C43909 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		77C03A9319A067C300C43909 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		77C03A9519A0767200C43909 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +94,16 @@
 				77C03A6A199FB8E800C43909 /* AppDelegate.swift */,
 				77C03A6C199FB8E800C43909 /* ViewController.swift */,
 				77C03A87199FBA5C00C43909 /* IntroViewController.swift */,
+				77C03A8919A0214F00C43909 /* SignInViewController.swift */,
+				77C03A9319A067C300C43909 /* SignUpViewController.swift */,
+				77C03A8B19A0436100C43909 /* WelcomeViewController.swift */,
+				77C03A8D19A0592E00C43909 /* FeedViewController.swift */,
+				77C03A9119A05D5100C43909 /* SettingsViewController.swift */,
+				77C03A9519A0767200C43909 /* WebViewController.swift */,
 				77C03A6E199FB8E800C43909 /* Main.storyboard */,
 				77C03A71199FB8E800C43909 /* Images.xcassets */,
 				77C03A68199FB8E800C43909 /* Supporting Files */,
-				77C03A8919A0214F00C43909 /* SignInViewController.swift */,
+				77C03A8F19A05B4100C43909 /* ConversationsViewController.swift */,
 			);
 			path = FakeCarousel;
 			sourceTree = "<group>";
@@ -215,9 +233,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				77C03A8A19A0214F00C43909 /* SignInViewController.swift in Sources */,
+				77C03A8C19A0436100C43909 /* WelcomeViewController.swift in Sources */,
+				77C03A9019A05B4100C43909 /* ConversationsViewController.swift in Sources */,
+				77C03A9619A0767200C43909 /* WebViewController.swift in Sources */,
 				77C03A88199FBA5C00C43909 /* IntroViewController.swift in Sources */,
 				77C03A6D199FB8E800C43909 /* ViewController.swift in Sources */,
+				77C03A8E19A0592E00C43909 /* FeedViewController.swift in Sources */,
+				77C03A9419A067C300C43909 /* SignUpViewController.swift in Sources */,
 				77C03A6B199FB8E800C43909 /* AppDelegate.swift in Sources */,
+				77C03A9219A05D5100C43909 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

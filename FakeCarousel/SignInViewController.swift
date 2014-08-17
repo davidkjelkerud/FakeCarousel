@@ -11,6 +11,7 @@ import QuartzCore
 
 class SignInViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var formContainerView: UIView!
     @IBOutlet weak var buttonContainerView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
@@ -21,18 +22,38 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingView.hidden = true
-
+        
+        // Set form element to scale 0 so we can animate them
+        formContainerView.transform = CGAffineTransformMakeScale(0, 0)
+        buttonContainerView.transform = CGAffineTransformMakeScale(0, 0)        
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        UIView.animateWithDuration(0.4, animations: {
+            self.formContainerView.transform = CGAffineTransformMakeScale(1, 1)
+            self.buttonContainerView.transform = CGAffineTransformMakeScale(1, 1)
+        })
     }
 
     func keyboardWillShow(notification: NSNotification!) {
         println("Keyboard will show")
         
-        formContainerView.center.y -= 100
-        buttonContainerView.center.y -= 250
+        var userInfo = notification.userInfo
+        var beganKbRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as NSValue).CGRectValue()
+        var endKbRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
+        
+        println("keyboard began frame: \(beganKbRect.origin.y)")
+        println("keyboard end frame: \(endKbRect.origin.y)")
+
+        
+        if (beganKbRect.origin.y == 568) {
+            formContainerView.center.y -= 100
+            buttonContainerView.center.y -= 250
+        }
     }
     
     func keyboardWillHide(notification: NSNotification!) {
@@ -53,7 +74,7 @@ class SignInViewController: UIViewController {
             login()
         }
     }
-    
+
     func login() {
         //show loading view
         loadingView.hidden = false
@@ -61,7 +82,7 @@ class SignInViewController: UIViewController {
         
         delay(2) {
             if self.emailTextField.text == "user" && self.passwordTextField.text == "password" {
-                //self.performSegueWithIdentifier("signInSegue", sender: self)
+                self.performSegueWithIdentifier("welcomeSegue", sender: self)
             } else {
                 self.loadingView.hidden = true
                 
@@ -71,6 +92,10 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func onPan(sender: AnyObject) {
         view.endEditing(true)
     }
     

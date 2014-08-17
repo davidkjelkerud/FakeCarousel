@@ -49,15 +49,15 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         var tiles: [UIImageView] = [tileOneImageView, tileTwoImageView, tileThreeImageView, tileFourImageView, tileFiveImageView, tileSixImageView]
         
         for (index, value) in enumerate(tiles) {
+            var rotation = convertValue(offset, r1Min: 0, r1Max: self.scrollHeight, r2Min: self.rotations[index], r2Max: 0)
 
             var tx = convertValue(offset, r1Min: 0, r1Max: self.scrollHeight, r2Min: self.xOffsets[index], r2Max: 0)
             var ty = convertValue(offset, r1Min: 0, r1Max: self.scrollHeight, r2Min: self.yOffsets[index], r2Max: 0)
             var scale = convertValue(offset, r1Min: 0, r1Max: self.scrollHeight, r2Min: self.scales[index], r2Max: 1)
-            var rotation = convertValue(offset, r1Min: 0, r1Max: self.scrollHeight, r2Min: self.rotations[index], r2Max: 0)
             
-            value.transform = CGAffineTransformMakeTranslation(CGFloat(tx), CGFloat(ty))
+            value.transform = CGAffineTransformMakeRotation(CGFloat(Double(rotation) * M_PI/180))
+            value.transform = CGAffineTransformTranslate(value.transform, CGFloat(tx), CGFloat(ty))
             value.transform = CGAffineTransformScale(value.transform, CGFloat(scale), CGFloat(scale))
-            value.transform = CGAffineTransformRotate(value.transform, CGFloat(Double(rotation) * M_PI/180))
         }
     }
     
